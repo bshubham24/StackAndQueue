@@ -4,8 +4,21 @@
 package com.capgi;
 
 public class StackAndQueue {
+	LinkedList linkedList;
+
+	public StackAndQueue() {
+		this.linkedList = new LinkedList();
+	}
+
 	public void push(INode newNode) {
-		LinkedList linkedList = new LinkedList<>();
 		linkedList.add(newNode);
+	}
+
+	public INode peek() {
+		return linkedList.getHead();
+	}
+
+	public void printStack() {
+		linkedList.printLinkedList();
 	}
 }

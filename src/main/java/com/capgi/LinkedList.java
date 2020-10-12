@@ -1,6 +1,6 @@
 package com.capgi;
 
-public class LinkedList<K extends Comparable<K>> {
+public class LinkedList<K> {
 	private INode head;
 	private INode tail;
 
@@ -52,11 +52,6 @@ public class LinkedList<K extends Comparable<K>> {
 		}
 	}
 
-	public void insertInBetweenTwoNumbers(INode preNode, INode postNode, INode newNode) {
-		preNode.setNext(newNode);
-		newNode.setNext(postNode);
-	}
-
 	public INode pop() {
 		INode tempNode = this.head;
 		this.head = this.head.getNext();
@@ -72,71 +67,6 @@ public class LinkedList<K extends Comparable<K>> {
 		this.tail = tempNodeHead;
 		tempNodeHead.setNext(null);
 		return tempNode;
-	}
-
-	public INode<K> searchNode(K value) {
-		INode<K> tempNode = getHead();
-		while (tempNode != null) {
-			if (tempNode.getKey() == value) {
-				return tempNode;
-			}
-			tempNode = tempNode.getNext();
-		}
-		return tempNode;
-	}
-
-	public void InsertAfterANode(K value, INode newNode) {
-		INode<K> tempNode = searchNode(value);
-		newNode.setNext(tempNode.getNext());
-		tempNode.setNext(newNode);
-	}
-
-	public void delete(K value) {
-		INode<K> NodeBeforetempNode = getHead();
-		INode<K> tempNode = searchNode(value);
-		if (tempNode == null) {
-			System.out.println("Node not present");
-		} else {
-			while (NodeBeforetempNode.getNext() != tempNode) {
-				NodeBeforetempNode = NodeBeforetempNode.getNext();
-			}
-			NodeBeforetempNode.setNext(tempNode.getNext());
-		}
-	}
-
-	public int sizeOfList() {
-		INode tempNode = getHead();
-		int size = 0;
-		while (tempNode != null) {
-			tempNode = tempNode.getNext();
-			size++;
-		}
-		return size;
-	}
-
-	public void addAndSort(INode newNode) {
-		INode tempNode = getHead();
-		INode tempNode2 = getHead();
-		if (tempNode == null) {
-			setHead(newNode);
-			setTail(newNode);
-		} else if (tempNode != null && tempNode.getKey().compareTo(newNode.getKey()) > 0) {
-			setHead(newNode);
-			newNode.setNext(tempNode);
-
-		} else {
-			while (tempNode != null && tempNode.getKey().compareTo(newNode.getKey()) < 0) {
-				tempNode2 = tempNode;
-				tempNode = tempNode.getNext();
-			}
-			newNode.setNext(tempNode);
-			tempNode2.setNext(newNode);
-			if (tempNode == null) {
-				setTail(newNode);
-			}
-
-		}
-
 	}
 
 	public void printLinkedList() {

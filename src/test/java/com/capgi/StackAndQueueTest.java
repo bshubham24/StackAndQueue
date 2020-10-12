@@ -3,15 +3,25 @@
  */
 package com.capgi;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
-import com.capgi.StackAndQueue;
-
-import static org.junit.Assert.*;
-
 public class StackAndQueueTest {
-    @Test public void testSomeLibraryMethod() {
-        StackAndQueue classUnderTest = new StackAndQueue();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
-    }
+	@Test
+	public void stackPushOperationTest() {
+		StackAndQueue stack = new StackAndQueue();
+		Node<Integer> firstNode = new Node<Integer>(70);
+		Node<Integer> secondNode = new Node<Integer>(30);
+		Node<Integer> thirdNode = new Node<Integer>(56);
+		stack.push(firstNode);
+		stack.push(secondNode);
+		stack.push(thirdNode);
+		stack.printStack();
+
+		boolean result = stack.peek().equals(thirdNode);
+		assertTrue(result);
+
+	}
+
 }

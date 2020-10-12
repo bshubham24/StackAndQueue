@@ -1,6 +1,6 @@
 package com.capgi;
 
-public class Node<K extends Comparable<K>> implements INode<K> {
+public class Node<K> implements INode<K> {
 
 	private K key;
 	private Node<K> next;
