@@ -3,10 +3,10 @@
  */
 package com.capgi;
 
-public class StackAndQueue {
+public class Stack {
 	LinkedList linkedList;
 
-	public StackAndQueue() {
+	public Stack() {
 		this.linkedList = new LinkedList();
 	}
 

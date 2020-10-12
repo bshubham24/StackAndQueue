@@ -7,10 +7,10 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-public class StackAndQueueTest {
+public class StackTest {
 	@Test
 	public void stackPushOperationTest() {
-		StackAndQueue stack = new StackAndQueue();
+		Stack stack = new Stack();
 		Node<Integer> firstNode = new Node<Integer>(70);
 		Node<Integer> secondNode = new Node<Integer>(30);
 		Node<Integer> thirdNode = new Node<Integer>(56);
