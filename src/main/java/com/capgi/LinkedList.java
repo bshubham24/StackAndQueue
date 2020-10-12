@@ -69,6 +69,16 @@ public class LinkedList<K> {
 		return tempNode;
 	}
 
+	public int sizeOfList() {
+		INode tempNode = getHead();
+		int size = 0;
+		while (tempNode != null) {
+			tempNode = tempNode.getNext();
+			size++;
+		}
+		return size;
+	}
+
 	public void printLinkedList() {
 		INode tempNode = this.head;
 		while (tempNode != null) {
