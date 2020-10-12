@@ -14,8 +14,24 @@ public class Stack {
 		linkedList.add(newNode);
 	}
 
+	public void pop() {
+		linkedList.pop();
+	}
+
 	public INode peek() {
 		return linkedList.getHead();
+	}
+
+	public int size() {
+		return linkedList.sizeOfList();
+	}
+
+	public boolean isEmpty() {
+		if (size() > 0) {
+			return true;
+		} else
+			return false;
+
 	}
 
 	public void printStack() {

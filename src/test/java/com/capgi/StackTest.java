@@ -24,4 +24,21 @@ public class StackTest {
 
 	}
 
+	@Test
+	public void stackPopAndPeekOperationTest() {
+		Stack stack = new Stack();
+		Node<Integer> firstNode = new Node<Integer>(70);
+		Node<Integer> secondNode = new Node<Integer>(30);
+		Node<Integer> thirdNode = new Node<Integer>(56);
+		stack.push(firstNode);
+		stack.push(secondNode);
+		stack.push(thirdNode);
+		stack.printStack();
+		stack.pop();
+		stack.printStack();
+
+		boolean result = stack.peek().equals(secondNode);
+		assertTrue(result);
+	}
+
 }
