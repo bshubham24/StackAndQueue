@@ -20,4 +20,21 @@ public class QueueTest {
 		assertTrue(result);
 
 	}
+
+	@Test
+	public void dequeueTest() {
+		Queue queue = new Queue();
+		Node<Integer> firstNode = new Node<Integer>(56);
+		Node<Integer> secondNode = new Node<Integer>(30);
+		Node<Integer> thirdNode = new Node<Integer>(70);
+		queue.enqueue(firstNode);
+		queue.enqueue(secondNode);
+		queue.enqueue(thirdNode);
+		queue.dequeue();
+		queue.printQueue();
+
+		boolean result = queue.linkedList.getHead().equals(secondNode) && queue.linkedList.getTail().equals(thirdNode);
+		assertTrue(result);
+
+	}
 }
